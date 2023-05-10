@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* margin-top: 20rpx; */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 120%;
+}
+
+
+
+
+.label {
+  flex-basis: 20%;
+  font-size: 16px;
+  color: #333333;
+  margin-right: 25rpx;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.input {
+  flex-basis: 40%;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+}
+.input1 {
+  flex-basis: 40%;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  color: #808080;
+}
+
+
+.picker {
+  flex-basis: 40%;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+}
+.picker-content1 {
+   font-size: 16px;
+  
+  text-align: center;
+  line-height: 30px;
+  color: #808080;
+}
+
+.picker-content {
+  font-size: 16px;
+  color: #333333;
+  text-align: center;
+  line-height: 30px;
+}
+.results{
+  display: flex;
+  flex-direction: row;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 20px; */
+  margin-left: 30px;
+}
+
+.result-label {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.result-value {
+  font-size: 28px;
+  color: #ff0000;
+  font-weight: bold;
+}
+.insertBtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  width: 250rpx;
+  height: 70rpx;
+  background-color: #22a4f1;
+  border-radius: 10rpx;
+}
+

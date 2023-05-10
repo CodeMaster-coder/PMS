@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10rpx;
+  padding: 10rpx;
+  border:2rpx solid #3f85ff;
+  border-radius: 30rpx;
+  background-color: #b0d8f8;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: justify;
+  text-align-last:justify;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+  width: 50%;
+  margin-left: 30rpx;
+}
+
+.value {
+  font-size: 12px;
+  color: #333;
+}
+.leftside{
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  justify-content: center;
+
+}
+.title{
+  display: flex;
+  justify-content: center;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  margin-top: 10rpx;
+  text-align: center;
+  
+}
+.input{
+  border-bottom: 2rpx solid black;
+}
+.container1 {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  margin: 10rpx;
+  padding: 10rpx;
+  border:2rpx solid #3f85ff;
+  border-radius: 30rpx;
+  background-color: #cde3f5;
+}
+.insertBtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  width: 250rpx;
+  height: 70rpx;
+  background-color: #22a4f1;
+  border-radius: 10rpx;
+}
+.btnline{
+  display: flex;
+  justify-content: center;
+}

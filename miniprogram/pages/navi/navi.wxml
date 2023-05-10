@@ -1,0 +1,24 @@
+<view class="container">
+
+  <!-- 第一行 -->
+  <view class="line">
+
+    <view class="title">
+      请输入邀请码：
+    </view>
+
+    <view class="content">
+      <input type="text" bindinput="codeInput"/>
+    </view>
+    
+  </view>
+
+  <!-- 第二行 -->
+  <view class="line">
+    <view class="btn" bindtap="naviToLogin">
+      跳转注册页面
+    </view>
+    
+  </view>
+
+</view>

@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/hoursOutputSection/hoursOutputSection",
+    "pages/ErrorShow/ErrorShow",
+    "pages/ErrorShowSection/ErrorShowSection",
+    "pages/register/register",
+    "pages/userPage/userPage",
+    "pages/mainpage/mainpage",
+    "pages/hoursOutput/hoursOutput",
+    "pages/output/output",
+    "pages/errorRecord/errorRecord",
+
+
+
+
+    "pages/bigsectionStatus/bigsectionStatus",
+
+
+
+    "pages/navi/navi",
+    "pages/auth/auth",
+    "pages/index/index",
+    "pages/login/login", 
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#959394",  
+    "selectedColor": "#959394",
+    "backgroundColor": "#f0f0f0",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/mainpage/mainpage", 
+        "iconPath": "/pages/images/main.png",
+        "selectedIconPath": "/pages/images/mainselected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/userPage/userPage",
+        "iconPath": "/pages/images/mine.png",
+        "selectedIconPath": "/pages/images/mineselected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

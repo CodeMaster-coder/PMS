@@ -1,0 +1,41 @@
+
+<view class="page">
+<view class="mainbox">
+<view class="registerbox" >
+<view class="nameline">
+<view class="title">
+<p>姓</p><p>名：</p>
+</view>
+<view class="nameInputBox">
+<input type="text" placeholder="请输入姓名" bindinput="workerNameInput"></input>
+</view>
+</view>
+<view class="nameline">
+<view class="title">
+<p>工</p><p>号：</p>
+</view>
+<view class="nameInputBox">
+<input type="digit" placeholder="请输入工号" bindinput="workerNumberInput" maxlength="3" ></input>
+</view>
+</view>
+<view class="nameline">
+<view class="title">
+<p>工</p><p>种：</p>
+</view>
+<view class="nameInputBox">
+<picker value = "{{typesIndex}}" range = "{{workerTypeSelect}}" bindchange = 'workerTypeSelect'>
+<view class="{{typesIndex == 0 ? 'typeSelect' : 'typeSelect1'}}" >
+  {{workerTypeSelect[typesIndex]}}
+</view>
+  
+</picker>
+</view>
+</view>
+<view class="registerline">
+  <view class="registerBotton" bindtap="registerBtn">
+授权注册
+</view>
+</view>
+</view>
+</view>
+</view>

@@ -1,0 +1,18 @@
+<view class="container">
+ <form bindsubmit="submitForm">
+    <view class="form-item">
+      <text>条线</text>
+      <picker mode="selector" name="line" value="{{lineIndex}}" range="{{lineArray}}" bindchange="bindLineChange">
+        <view class="{{lineIndex == 0? 'picker' : 'picker1'}}">{{lineArray[lineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item" bindtap="checklineIndex">
+      <text>工段</text>
+      <picker mode="selector" name="productionLine" value="{{productionLineIndex}}" range="{{productionLineArray}}" bindchange="bindProductionLineChange">
+        <view class="{{productionLineIndex == 0? 'picker' : 'picker1'}}">{{productionLineArray[productionLineIndex]}}</view>
+      </picker>
+    </view>
+ 
+    <button  class="submit-btn" bindtap="naviToHoursOutput">输入分时产量</button>
+   </form>
+</view>

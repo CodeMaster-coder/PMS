@@ -1,0 +1,227 @@
+/* pages/userPage/userPage.wxss */
+.biggestBox{
+  width: 100%;
+  height: 1000000rpx;
+}
+.titlebox{
+  width: 100%;
+  height: 294rpx;
+  background-color: #d1e6f8;
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+  z-index: 9;
+}
+.userbox{
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.userImage image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  /* border: 3rpx solid  	#ffffff; */
+}
+.textbox{
+  margin-left: 16rpx;
+}
+.nickNameText{
+  font-size: 32rpx;
+  color:#131212;
+}
+.loginBtn{
+  margin-top: 16rpx;
+  width: 130rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #F9F8F8 ;
+  border: 2rpx solid rgba(187, 187, 187, 100);
+  background-color: rgba(230, 45, 45, 100);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.exitBtn{
+  margin-top: 16rpx;
+  width:90rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #F9F8F8 ;
+  border: 2rpx solid rgba(187, 187, 187, 100);
+  background-color: rgba(230, 45, 45, 100);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.titleLine{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.refreshBox{
+  display: flex;
+  flex-direction: row;
+  margin-left: 500rpx;
+}
+.refreshImage{
+  margin-top: 10rpx;
+}
+.refreshImage image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.refreshBtn{
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+.selfStockTitle{
+  font-size: 28rpx;
+  margin-left: 26rpx;
+  margin-top: 15rpx;
+}
+.selfStockBox{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+
+  width: 100%;
+  margin-top: 16rpx;
+}
+.selfStockListBox{
+  display: flex;
+  flex-direction: row;
+}
+.selfStockList{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 2rpx solid rgba(187, 187, 187, 100);
+  height: 130rpx;
+  border-radius: 20rpx;
+  margin-top: 14rpx;
+  margin-left: 4rpx;
+  margin-right: 4rpx;
+}
+.stockCol{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.stockTitle{
+  height: 30%;
+  text-align: center;
+  /* line-height: 30%; */
+  margin-top: 13rpx;
+  font-size: 24rpx;
+}
+.nameCode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name{
+  font-size: 28rpx;
+  color: black;
+}
+.code{
+  font-size: 24rpx;
+  color:   	#808080;
+}
+.stretagyDetail{
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+justify-content: center;
+}
+.detailcode{
+  font-size: 24rpx;
+  margin-left: 40rpx;
+  color:   	#808080;
+}
+.stretagyContent{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tradeAction{
+  font-size: 28rpx;
+  color: #FB0303;
+}
+/* .navTriangle{
+  width: 3.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(187, 187, 187, 100);
+  border-radius: 0 15rpx 15rpx 0;
+} */
+.navTriangle image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.stretagySignal{
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.delBtn{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  height: 130rpx;
+  line-height: 130rpx;
+  width: 90rpx;
+  margin-right: 5rpx;
+  margin-left: 10rpx;
+  border: 2rpx solid rgba(187, 187, 187, 100);
+  border-radius: 20rpx;
+  margin-top: 14rpx;
+  background-color:  	 	#F5F5F5;
+}
+.delBtn1{
+  display: none;
+}
+.naviLine{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.naviBox{
+  width: 30%;
+  margin: 20rpx;
+  text-align: center;
+}
+.naviImage image{
+  width: 60%;
+  height: 80rpx;
+}
+.naviText{
+  font-size: 25rpx;
+  
+}
+.naviLine1{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+}
+.naviBox1{
+width: 27%;
+  margin: 20rpx;
+  text-align: center;
+}

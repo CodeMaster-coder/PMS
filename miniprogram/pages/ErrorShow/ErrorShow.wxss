@@ -1,0 +1,119 @@
+/* pages/ErrorShow/ErrorShow.wxss */
+.container{
+     width: 94%;
+     /* height: 200rpx; */
+     display: flex;
+     flex-direction: column;
+     border: 5rpx solid #185abd;
+     background-color: #c5e3f8;
+     border-radius: 30rpx;
+     margin: 20rpx;
+}
+.line{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+ 
+}
+.left{
+  width: 50%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+.title{
+  color: #797979;
+}
+.text{
+  margin-left: 10rpx;
+}
+.container1{
+  width: 94%;
+  /* height: 200rpx; */
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20rpx;
+}
+.line1{
+width: 100%;
+height: 60rpx;
+display: flex;
+flex-direction: row;
+
+
+}
+.left1{
+width: 50%;
+height: 60rpx;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+border: 5rpx solid #185abd;
+  background-color: #c5e3f8;
+  border-radius: 30rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.left2{
+  width: 50%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 5rpx solid #185abd;
+    background-color: #c5e3f8;
+    border-radius: 30rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    background-color: #0089d2;
+  }
+.endErrorContainer{
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  border: 5rpx solid #185abd;
+  background-color: #e1eef8;
+  border-radius: 30rpx;
+  margin: 5rpx;
+  font-size: 25rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+}
+.titleline{
+  display: flex;
+  flex-direction: row;
+}
+.AFO{
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.starttime{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.holdtime{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.errorContent{
+  width: 39%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,64 @@
+.mainbox{
+  width: 500rpx;
+  height: 400rpx;
+  background-color: white;
+  margin-left: 120rpx;
+  margin-top: 300rpx;
+  border-radius: 30rpx;
+}
+
+.nameline{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 40rpx;
+}
+
+.title{
+  color: #4096ff;
+}
+
+.nameInputBox{
+  border: 4rpx solid #4096ff;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  width: 350rpx;
+  height: 45rpx;
+}
+.nameInputBox1{
+  border: 4rpx solid #4096ff;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  width: 350rpx;
+  height: 45rpx;
+  color: #808080;
+}
+.registerBtn{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+.Btn{
+  width: 250rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #4096ff;
+  border-radius: 30rpx;
+
+  
+}
+.mainbox1{
+  width: 500rpx;
+  height: 400rpx;
+  background-color: white;
+  margin-left: 120rpx;
+  margin-top: 300rpx;
+  border-radius: 30rpx;
+  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

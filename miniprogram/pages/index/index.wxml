@@ -1,0 +1,88 @@
+<!-- 主框 -->
+<view class="mainbox" wx:if="{{registerShow}}"> 
+
+<!-- 姓名行 -->
+<view class="nameline">
+
+<!-- 姓名标题 -->
+  <view class="title">
+    <p>
+      姓 名
+    </p>
+  
+  </view>
+<!-- 姓名输入 -->
+  <view class="nameInputBox">
+    <input type="text" placeholder="请输入姓名" bindinput="nameInput" value="{{name}}"/>
+  </view>
+
+</view>
+
+
+<!-- 工号行 -->
+<view class="nameline">
+
+<!-- 工号标题 -->
+  <view class="title">
+    <p>
+      工 号
+    </p>
+  
+  </view>
+<!-- 工号输入 -->
+  <view class="nameInputBox">
+    <input maxlength="10" type="number" placeholder="请输入工号" bindinput="numInput" value="{{num}}"/>
+  </view>
+
+</view>
+
+
+<!-- 工种 -->
+<view class="nameline">
+
+<!-- 工种标题 -->
+  <view class="title">
+    <p>
+      工 种
+    </p>
+  </view>
+
+<!-- 工种选择 -->
+  <view class="{{index1 == 0 ? 'nameInputBox1' : 'nameInputBox' }}">
+
+    <picker range="{{array}}" value="{{index}}" bindchange="select">
+
+      <view class="workerSelect">
+        {{array[index1]}}
+      </view>
+    </picker>
+  </view>
+
+  
+
+</view>
+
+<!-- 授权注册按钮 -->
+<view class="registerBtn">
+
+  <view class="Btn" bindtap="logup">
+      授权注册
+  </view>
+    
+</view>
+
+
+
+
+
+
+</view>
+
+
+
+<view class="mainbox1" wx:if="{{!registerShow}}"> 
+授权注册成功，请耐心等待审批通过！！！
+</view>
+  
+
+

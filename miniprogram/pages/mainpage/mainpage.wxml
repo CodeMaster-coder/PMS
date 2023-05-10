@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="red">
+    
+  </view>
+  <view class="title">
+    故障
+  </view>
+  <view class="yellow">
+    
+  </view>
+  <view class="title">
+    欠产
+  </view>
+  <view class="green">
+    
+  </view>
+  <view class="title">
+    正常
+  </view>
+</view>
+<view  wx:for="{{lineStatus}}" wx:key="id" >
+<view class="line" bindtap="toNextPage" data-index = '{{index}}'>
+  <view class="left"  >
+    {{item.line}}
+  </view>
+  <view class="right">
+    <view class="redDot" wx:if="{{!item.errorstatus}}">
+      
+    </view>
+    <view class="yellowDot" wx:if="{{!item.outpustatus}}">
+      
+    </view>
+    <view class="greenDot" wx:if="{{item.outpustatus&item.errorstatus}}">
+      
+    </view>
+  </view>
+</view>
+ 
+</view>

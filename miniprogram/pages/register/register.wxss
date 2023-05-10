@@ -1,0 +1,86 @@
+.container {
+  margin: 30rpx;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.title-text {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.label {
+  font-size: 30rpx;
+  flex-shrink: 0;
+  width: 120rpx;
+  text-align: justify;
+  text-align-last: justify;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20rpx;
+}
+
+.input,
+.picker {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 4rpx;
+  padding: 15rpx;
+  font-size: 30rpx;
+}
+
+
+
+
+.picker-text {
+  font-size: 30rpx;
+  color: #666;
+  text-align: right;
+}
+.picker-text1 {
+  font-size: 30rpx;
+  color: black;
+  text-align: right;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #007aff;
+  color: #fff;
+  font-size: 36rpx;
+  border: none;
+  border-radius: 4rpx;
+  padding: 15rpx;
+  margin-top: 30rpx;
+}
+.infobox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infoimage{
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 230rpx;
+  border: 6rpx solid #e3f0f8;
+  margin-top: 5%;
+}
+.hello{
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}

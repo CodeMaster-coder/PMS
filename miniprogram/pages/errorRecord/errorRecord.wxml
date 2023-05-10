@@ -1,0 +1,64 @@
+<view class="container">
+  <form bindsubmit="submitForm">
+    <view class="form-item">
+      <text>条线</text>
+      <picker mode="selector" name="line" value="{{lineIndex}}" range="{{lineArray}}" bindchange="bindLineChange">
+        <view class="{{lineIndex == 0? 'picker' : 'picker1'}}">{{lineArray[lineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item" bindtap="checklineIndex">
+      <text>工段</text>
+      <picker mode="selector" name="productionLine" value="{{productionLineIndex}}" range="{{productionLineArray}}" bindchange="bindProductionLineChange">
+        <view class="{{productionLineIndex == 0? 'picker' : 'picker1'}}">{{productionLineArray[productionLineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item" bindtap="checkLinePlineIndex">
+      <text>班组</text>
+      <picker mode="selector" name="area" value="{{areaIndex}}" range="{{areaArray}}" bindchange="bindAreaChange">
+        <view class="{{areaIndex == 0? 'picker' : 'picker1'}}">{{areaArray[areaIndex]}}</view>
+      </picker>
+    </view>
+     <view class="form-item" bindtap="checkLinePlineAreaIndex">
+      <text>工位</text>
+      <picker mode="selector" name="area" value="{{AFOIndex}}" range="{{AFOArray}}" bindchange="bindAFOChange">
+        <view class="{{AFOIndex == 0? 'picker' : 'picker1'}}">{{AFOArray[AFOIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text>车型</text>
+      <picker mode="selector" name="cartype" value="{{cartypeIndex}}" range="{{cartypeArea}}" bindchange="bindCartypeChange">
+        <view class="{{cartypeIndex == 0? 'picker' : 'picker1'}}">{{cartypeArea[cartypeIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text>主修人</text>
+      <input class="input-box" name="mainRepairPerson" placeholder="请输入主修人" value="{{maintainers}}" bindinput="maintainersInput"/>
+    </view>
+    <view class="form-item">
+      <text>故障开始时间</text>
+      <picker mode="time" name="startTime" value="{{timeStart}}" bindchange="bindstartTimeChange">
+        <view class="{{timeStart == '请选择开始时间'? 'picker' : 'picker1'}}">{{timeStart}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text>故障持续时间</text>
+      <input class="input-box" value="{{holdTime}}"  name="duration" placeholder="故障持续时间" />
+    </view>
+    <view class="form-item">
+      <text>故障描述</text>
+      <textarea class="input-box" name="description" placeholder="请输入故障描述" value="{{errorInfo}}" bindblur="errorInput"></textarea>
+    </view>
+    <view class="form-item" wx:if="{{endBtnShow}}">
+      <text>故障结束时间</text>
+      <picker mode="time" name="endTime" value="{{endTime}}" bindchange="bindendTimeChange">
+        <view class="{{endTime == '请选择结束时间'? 'picker' : 'picker1'}}">{{endTime}}</view>
+      </picker>
+    </view>
+    <view class="endbtn" wx:if="{{!endBtnShow}}">
+      <view class="btn" bindtap="endTimeShow">
+        故障已结束
+      </view>
+    </view>
+    <button formType="submit" class="submit-btn">提交</button>
+  </form>
+</view>

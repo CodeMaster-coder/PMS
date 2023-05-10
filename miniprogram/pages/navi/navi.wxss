@@ -1,0 +1,23 @@
+/* pages/navi/navi.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+}
+.line{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+.content{
+  width: 300rpx;
+  border: 2rpx solid  black;
+}
+.btn{
+  width: 260rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #4ca4ff;
+  border-radius: 30rpx;
+}

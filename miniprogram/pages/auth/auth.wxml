@@ -1,0 +1,77 @@
+<!--pages/auth/auth.wxml-->
+<view class="line" wx:for="{{workers}}" wx:key="_id" >
+
+<view class="bigbox">
+
+  <!-- 姓名行 -->
+<view class="nameline">
+
+  <view class="title">
+    姓名:
+  </view>
+
+  <view class="name"> 
+    {{item.employeeName}}
+  </view>
+  
+</view>
+
+<!-- 高级权限按钮 -->
+<view class="btn" bindtap="highauth" data-id="{{item.id}}" data-index = '{{index}}'>
+
+  工长权限
+</view>
+
+</view>
+
+
+<view class="bigbox">
+
+<!-- 工号行 -->
+<view class="nameline">
+
+<view class="title">
+  工号:
+</view>
+
+<view class="name"> 
+  {{item.employeeId}}
+</view>
+
+</view>
+
+<!-- 中级权限按钮 -->
+<view class="btn" bindtap="midauth" data-id="{{item.id}}" data-index = '{{index}}'>
+班长权限
+</view>
+
+</view>
+
+<view class="bigbox">
+
+<!-- 工种行 -->
+<view class="nameline">
+
+<view class="title">
+  班次:
+</view>
+
+<view class="name"> 
+  {{item.shift}}
+</view>
+
+</view>
+
+<!-- 不予通过按钮 -->
+<view class="btn" bindtap="delbtn" data-id="{{item.id}}" data-index = '{{index}}'>
+不予通过
+</view>
+
+</view>
+
+
+
+
+ 
+
+</view>

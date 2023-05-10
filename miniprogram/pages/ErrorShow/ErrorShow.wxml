@@ -1,0 +1,176 @@
+<!--pages/ErrorShow/ErrorShow.wxml-->
+<view class="container" >
+    <view class="line">
+      <view class="left">
+        <view class="title">
+          条线:
+        </view>
+        <view class="text">
+          {{line}}
+        </view>
+      </view>
+      <view class="left">
+        <view class="title">
+          工段:
+        </view>
+        <view class="text">
+          {{bigsection}}
+        </view>
+      </view>
+    </view>
+    <view class="line">
+      <view class="left">
+        <view class="title">
+          班组:
+        </view>
+        <view class="text">
+          {{smallsection}}
+        </view>
+      </view>
+      <view class="left">
+        <view class="title">
+          工位:
+        </view>
+        <view class="text">
+          {{AFO}}
+        </view>
+      </view>
+    </view>
+    <view class="line">
+      <view class="left">
+        <view class="title">
+          日期:
+        </view>
+        <view class="text">
+          {{date}}
+        </view>
+      </view>
+    
+    </view>
+</view>
+<view class="container1">
+  <view class="line1">
+      <view class="{{!closeTapShow?'left1':'left2'}}" bindtap="endErrorSelect">
+        已结束故障
+      </view>
+      <view class="{{closeTapShow?'left1':'left2'}}" bindtap="noendErrorSelect">
+       未结束故障
+      </view>
+    </view>
+</view>
+<view class="endErrorContainer" wx:for="{{errorInfo}}" wx:key="index" wx:if="{{closeTapShow}}">
+<view class="titleline">
+  
+
+    <view class="AFO">
+      <view class="title">
+        工位
+      </view>
+     
+    </view>
+    <view class="starttime">
+      <view class="title">
+        开始时间
+      </view>
+      
+    </view>
+    <view class="holdtime">
+      <view class="title">
+        持续时间
+      </view>
+      
+    </view>
+    <view class="errorContent">
+      
+      <view class="title">
+        故障信息
+      </view>
+    </view>
+  </view>
+  <view class="titleline">
+  
+
+  <view class="AFO">
+  
+    <view class="content">
+      {{item.AFO}}
+    </view>
+  </view>
+  <view class="starttime">
+   
+    <view class="content">
+      {{item.startTime1}}
+    </view>
+  </view>
+  <view class="holdtime">
+   
+    <view class="content">
+      {{item.holdTime1}}
+    </view>
+  </view>
+  <view class="errorContent">
+      
+      <view class="content">
+        {{item.errorInfo}}
+      </view>
+    </view>
+</view>
+</view>
+<view class="endErrorContainer" wx:for="{{errorInfo}}" wx:key="index" wx:if="{{!closeTapShow}}">
+<view class="titleline">
+  
+
+    <view class="AFO">
+      <view class="title">
+        工位
+      </view>
+     
+    </view>
+    <view class="starttime">
+      <view class="title">
+        开始时间
+      </view>
+      
+    </view>
+    <view class="holdtime">
+      <view class="title">
+        持续时间
+      </view>
+      
+    </view>
+    <view class="errorContent">
+      
+      <view class="title">
+        故障信息
+      </view>
+    </view>
+  </view>
+  <view class="titleline">
+  
+
+  <view class="AFO">
+  
+    <view class="content">
+      {{item.AFO}}
+    </view>
+  </view>
+  <view class="starttime">
+   
+    <view class="content">
+      {{item.startTime1}}
+    </view>
+  </view>
+  <view class="holdtime">
+   
+    <view class="content">
+      {{item.holdTime1}}
+    </view>
+  </view>
+  <view class="errorContent">
+      
+      <view class="content">
+        {{item.errorInfo}}
+      </view>
+    </view>
+</view>
+</view>

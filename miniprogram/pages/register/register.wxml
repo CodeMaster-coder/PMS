@@ -1,0 +1,41 @@
+<view class="container" wx:if="{{logShow}}">
+  <view class="title">
+    <text class="title-text">用户注册</text>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="form-item">
+      <text class="label">姓名：</text>
+      <input class="input" name="name" type="text" value = '{{name}}' placeholder="请输入姓名" />
+    </view>
+    <view class="form-item">
+      <text class="label">工号：</text>
+      <input class="input" name="number" type="text" value = '{{num}}' placeholder="请输入工号" />
+    </view>
+    <view class="form-item">
+      <text class="label">工种：</text>
+      <picker class="picker" name="type" mode="selector" range="{{typeRange}}" bindchange="bindPickerChange">
+        <text class="{{typeIndex == 0 ? 'picker-text' : 'picker-text1'}}">{{typeRange[typeIndex]}}</text>
+      </picker>
+    </view>
+    <!-- <view class="form-item">
+      <text class="label">角色：</text>
+      <picker class="picker" name="type" mode="selector" range="{{roleRange}}" bindchange="bindPickerChange">
+        <text class="picker-text">{{roleRange[roleIndex]}}</text>
+      </picker>
+    </view> -->
+    <view class="form-item">
+      <text class="label">班次：</text>
+      <picker class="picker" name="shift" mode="selector" range="{{shiftRange}}" bindchange="bindShiftChange">
+        <text class="{{shiftIndex == 0 ? 'picker-text' : 'picker-text1'}}">{{shiftRange[shiftIndex]}}</text>
+      </picker>
+    </view>
+    <button class="submit-btn" form-type="submit">提交</button>
+  </form>
+</view>
+<cover-view class="infobox" wx:if = '{{!logShow}}'>
+<cover-image class='infoimage'src= "{{avatarUrl}}" ></cover-image>
+<cover-view class="hello">你好,{{nickName}}</cover-view>
+<cover-view class="authwait" >
+  请耐心等待审核通过
+</cover-view>
+</cover-view>

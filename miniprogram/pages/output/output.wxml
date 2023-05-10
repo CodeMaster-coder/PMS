@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="input-group">
+    <label class="label">工段</label>
+    <picker class="picker" value="{{sectionIndex}}" range="{{sectionList}}" bindchange="onSectionChange" >
+      <view class="{{sectionIndex == 0 ? 'picker-content1' : 'picker-content'}}">{{sectionList[sectionIndex]}}</view>
+    </picker>
+  </view>
+
+  <view class="input-group">
+    <label class="label">{{car1}}</label>
+    <input class="input" type="number"  placeholder="请输入车型产量" value="{{car11Output}}" bindinput="car11OutputChange" />
+  </view>
+  <view class="input-group">
+    <label class="label">{{car2}}</label>
+    <input class="input" type="number"  placeholder="请输入车型产量" value="{{car12Output}}" bindinput="car12OutputChange" />
+  </view>
+  <view class="input-group">
+    <label class="label">{{car3}}</label>
+    <input class="input" type="number"  placeholder="请输入车型产量" value="{{car13Output}}" bindinput="car13OutputChange" />
+  </view>
+
+ 
+  
+  
+ 
+  <view class="input-group">
+  <text class="label">开始时间</text>
+  <picker class="picker" value="{{timeStartIndex}}" range="{{timeList}}" bindchange="bindStartTimeChange">
+    <view class="{{timeStartIndex == 0 ? 'picker-content1' : 'picker-content'}}">{{timeList[timeStartIndex]}}</view>
+  </picker>
+</view>
+<view class="input-group">
+    <label class="label">工时</label>
+    <input class="input" type="digit" placeholder="请输入工时" value="{{workingHours}}" bindinput="onWorkingHoursChange" />
+  </view>
+<view class="input-group">
+  <label class="label">结束时间</label>
+    <input class="{{endTime == '结束时间' ? 'input1' : 'input'}}" type="number" value="{{endTime}}"disabled='true' />
+</view>
+
+  <view class="input-group">
+    <label class="label">出勤人数</label>
+    <input class="input" type="number" placeholder="请输入出勤人数" value="{{attendance}}" bindinput="onAttendanceChange" />
+  </view>
+  <view class="results">
+    <view class="result">
+    <label class="result-label">3车型总产量</label>
+    <view class="result-value">{{totalOutput}}</view>
+    </view>
+    <!-- <view class="result">
+    <label class="result-label">总工时</label>
+    <view class="result-value">{{averageOutput}}</view>
+    </view> -->
+    <view class="result">
+    <label class="result-label">平均产量JPH</label>
+    <view class="result-value">{{averageOutput}}</view>
+    </view>
+  </view>
+  <view class="insertBtn" bindtap="insertOutput">
+    <!-- <view class="btn"> -->
+      提交
+    <!-- </view> -->
+    
+  </view>
+ 
+</view>

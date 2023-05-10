@@ -1,0 +1,62 @@
+<!--pages/userPage/userPage.wxml-->
+<!-- <view wx:if="{{loadingShow}}">
+    <loading >正在计算交易信号</loading>
+  </view> -->
+<view class="biggestBox" bindtap="btnHide">
+<view class="titlebox">
+<view class="userbox">
+<view class="userImage">
+<image src="{{headImage}}"></image>
+</view>
+<view class="textbox">
+<view class="nickNameText">{{nickName}}</view>
+<!-- <view wx:if="{{loginBtnShow}}" class="loginBtn" bindtap="resgiOrLogin">登录/注册</view> -->
+<!-- <view wx:if="{{!loginBtnShow}}" class="exitBtn" bindtap="exit">退出</view> -->
+</view>
+</view>
+</view>
+<view class="naviLine">
+  <view class="naviBox" bindtap="naviToAuth">
+    <view class="naviImage">
+      <image src="../images/auth.png"></image>
+    </view>
+    <view class="naviText">
+      员工授权
+    </view>
+  </view>
+  <view class="naviBox" bindtap="naviToErrorRecord">
+    <view class="naviImage">
+      <image src="../images/errorinsert.png"></image>
+    </view>
+    <view class="naviText">
+      故障输入
+    </view>
+  </view>
+  <view class="naviBox" bindtap="naviToOutput">
+    <view class="naviImage">
+      <image src="../images/outputinsert.png"></image>
+    </view>
+    <view class="naviText">
+      总产量输入
+    </view>
+  </view>
+</view>
+<view class="naviLine1">
+  <view class="naviBox1" bindtap="naviToHoursOutput">
+    <view class="naviImage">
+      <image src="../images/hoursoutputinsert.png"></image>
+    </view>
+    <view class="naviText">
+      分产量输入
+    </view>
+  </view>
+  <view class="naviBox" bindtap="naviToErrorShowSection">
+    <view class="naviImage">
+      <image src="../images/errorshow.png"></image>
+    </view>
+    <view class="naviText">
+      故障查询
+    </view>
+  </view>
+</view>
+</view>
