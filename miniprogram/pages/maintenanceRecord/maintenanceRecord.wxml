@@ -1,7 +1,7 @@
 <view class="container">
   <form bindsubmit="submitForm">
   
-  <picker name = 'picker' mode="multiSelector" bindchange="bindCustomPickerChange" bindcolumnchange="bindCustomPickerColumnChange"
+  <!-- <picker name = 'picker' mode="multiSelector" bindchange="bindCustomPickerChange" bindcolumnchange="bindCustomPickerColumnChange"
     value="{{customIndex}}" range="{{onlyArray}}">
     <view class="sectino1">
       <text>条线</text>
@@ -27,41 +27,44 @@
         <view class="{{AFO == '请选择工位'? 'picker' : 'picker1'}}">{{AFO}}</view>
 
     </view>
-  </picker>
-   
-    <view class="form-item">
+  </picker> -->
+  <view class="form-item">
+      <text>维保位置</text>
+      <input class="input-box" value="{{maintaincePosition}}"  name="maintaincePosition" placeholder="请输入维保位置" bindinput="inputMaintaincePosition"/>
+    </view>
+    <!-- <view class="form-item">
       <text>车型</text>
       <picker mode="selector" name="cartype" value="{{cartypeIndex}}" range="{{cartypeArea}}" bindchange="bindCartypeChange">
         <view class="{{cartypeIndex == 0? 'picker' : 'picker1'}}">{{cartypeArea[cartypeIndex]}}</view>
       </picker>
-    </view>
+    </view> -->
     <view class="form-item">
       <text>主修人</text>
       <input class="input-box" name="mainRepairPerson" placeholder="请输入主修人" value="{{maintainers}}" bindinput="maintainersInput"/>
     </view>
     <view class="form-item">
-      <text>故障开始时间</text>
+      <text>维保开始时间</text>
       <picker mode="time" name="startTime" value="{{timeStart}}" bindchange="bindstartTimeChange">
         <view class="{{timeStart == '请选择开始时间'? 'picker' : 'picker1'}}">{{timeStart}}</view>
       </picker>
     </view>
     <view class="form-item">
-      <text>故障持续时间</text>
-      <input class="input-box" value="{{holdTime}}"  name="duration" placeholder="故障持续时间" />
+      <text>维保持续时间</text>
+      <input class="input-box" value="{{holdTime}}"  name="duration" placeholder="维保持续时间" />
     </view>
     <view class="form-item">
-      <text>故障描述</text>
-      <textarea class="input-box" name="description" placeholder="请输入故障描述" value="{{errorInfo}}" bindblur="errorInput"></textarea>
+      <text>维保内容</text>
+      <textarea class="input-box" name="description" placeholder="请输入维保内容" value="{{errorInfo}}" bindblur="errorInput"></textarea>
     </view>
     <view class="form-item" wx:if="{{endBtnShow}}">
-      <text>故障结束时间</text>
+      <text>维保结束时间</text>
       <picker mode="time" name="endTime" value="{{endTime}}" bindchange="bindendTimeChange">
         <view class="{{endTime == '请选择结束时间'? 'picker' : 'picker1'}}">{{endTime}}</view>
       </picker>
     </view>
     <view class="endbtn" wx:if="{{!endBtnShow}}">
       <view class="btn" bindtap="endTimeShow">
-        故障已结束
+        维保已结束
       </view>
     </view>
     <button formType="submit" class="submit-btn">提交</button>

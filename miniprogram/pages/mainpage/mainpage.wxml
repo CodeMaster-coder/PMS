@@ -1,4 +1,10 @@
 <view class="container">
+<view class="gray">
+    
+  </view>
+  <view class="title">
+    维保
+  </view>
   <view class="red">
     
   </view>
@@ -24,15 +30,56 @@
     {{item.line}}
   </view>
   <view class="right">
+  <view class="signal1">
+    <view class="grayDot" wx:if="{{!item.maintainStatus}}">
+      
+    </view>
+  </view>
+  <view class="signal1">
     <view class="redDot" wx:if="{{!item.errorstatus}}">
       
     </view>
-    <view class="yellowDot" wx:if="{{!item.outpustatus}}">
+  </view>
+   <view class="signal1">
+    <view class="yellowDot" wx:if="{{item.outpustatus != 1}}">
       
     </view>
-    <view class="greenDot" wx:if="{{item.outpustatus&item.errorstatus}}">
+   </view>
+  <view class="signal1">
+    <view class="greenDot" wx:if="{{item.outpustatus&item.errorstatus&item.maintainStatus}}">
       
     </view>
+  </view>
+   
+  </view>
+</view>
+<view class="subline" >
+  <view class="subview" wx:for="{{item.bigsectionStatus}}" wx:key="id">
+    <view class="left1"  bindtap="naviToHousoutput" data-bigsection = "{{item.bigsection}}">
+    {{item.bigsection}}
+  </view>
+  <view class="right1">
+  <view class="signal">
+    <view class="gray" wx:if="{{!item.maintainStatus}}">
+      
+    </view>
+  </view>
+  <view class="signal">
+    <view class="red" wx:if="{{!item.errorstatus}}">
+      
+    </view>
+  </view>
+  <view class="signal">
+    <view class="yellow" wx:if="{{!item.outputstatus}}">
+      
+    </view>
+  </view>
+  <view class="signal">
+    <view class="green" wx:if="{{item.outputstatus&item.errorstatus&item.maintainStatus}}">
+      
+    </view>
+  </view>
+  </view>
   </view>
 </view>
  

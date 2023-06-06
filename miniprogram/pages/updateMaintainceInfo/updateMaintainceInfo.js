@@ -15,10 +15,11 @@ Page({
     endTime:'请选择结束时间',
     holdTime:'',
     startTimestamp:'',
+    startTime:'',
     holdTimestamp:'',
     errorInfo:'',
     endTimestamp:'',
-    modalContent:'确认此故障尚未结束？',
+    modalContent:'确认此维保尚未结束？',
     endBtnShow:false,
     customArray:[],
     customIndex: [0, 0, 0, 0],
@@ -200,9 +201,22 @@ Page({
     })
     
   },
+  cartypeArrayAssignment(line){
+    if(line.substring(0,3) == '2.1'){
+      this.setData({
+        cartypeArea:['请选择车型','Teramont','TeramontX','Viloran',]
+      });
+      console.log(this.data.cartypeArea)
+    }
+    else{
+      this.setData({
+        cartypeArea:['请选择车型','Tharu','AudiQ6','Karoq',]
+      });
+    }
+  },
   bindCartypeChange(e){
     this.setData({
-      cartypeIndex:e.detail.value
+      cartype:this.data.cartypeArea[e.detail.value]
     })
   },
   bindstartTimeChange: function (e) {
@@ -216,7 +230,7 @@ Page({
     var holdtime = parseInt(holdSec/3600) + '小时' + parseInt(holdSec%3600/60) + '分钟'
     this.setData({
       timeStart:e.detail.value,
-      startTimestamp:startTimestamp,
+      startTime:startTimestamp,
       holdTime:holdtime,
       holdTimestamp:holdSec,
     })
@@ -226,9 +240,9 @@ Page({
     var holdtime = parseInt(holdSec/3600) + '小时' + parseInt(holdSec%3600/60) + '分钟'
     this.setData({
       timeStart:e.detail.value,
-      startTimestamp:startTimestamp,
+      startTime:startTimestamp,
       holdTime:holdtime,
-      holdTimestamp:holdSec,
+      holdTime1:holdSec,
     })
    }
     
@@ -243,23 +257,23 @@ Page({
     var date = new Date(); 
     var endTime = date.toLocaleDateString() + ' ' + e.detail.value
     var endTimestamp = new Date(endTime).getTime()/1000;
-    if(this.data.startTimestamp != ''){
+    if(this.data.startTime != ''){
       console.log('结束时间',endTime)
-      var holdSec = endTimestamp - this.data.startTimestamp 
+      var holdSec = endTimestamp - this.data.startTime 
       var holdtime = parseInt(holdSec/3600) + '小时' + parseInt(holdSec%3600/60) + '分钟'
       this.setData({
         endTime:e.detail.value,
-        endTimestamp:endTimestamp,
-        modalContent:'确认此故障已结束？',
+        endTime1:endTimestamp,
+        modalContent:'确认此维保已结束？',
         holdTime:holdtime,
-        holdTimestamp:holdSec,
+        holdTime1:holdSec,
       })
     }
     else{
       this.setData({
         endTime:e.detail.value,
-        endTimestamp:endTimestamp,
-        modalContent:'确认此故障已结束？'
+        endTime1:endTimestamp,
+        modalContent:'确认此维保已结束？'
       })
     }
     
@@ -277,7 +291,7 @@ Page({
         duration:3000
       })
     }
-    else if(that.data.cartypeIndex == 0){
+    else if(that.data.cartype == '请选择车型'){
       wx.showToast({
         title: '请选择车型',
         icon:'error',
@@ -300,14 +314,14 @@ Page({
     }
     else if(that.data.errorInfo == ''){
       wx.showToast({
-        title: '请输入故障描述',
+        title: '请输入维保描述',
         icon:'error',
         duration:3000
       })
     }
     else if(that.data.errorInfo == ''){
       wx.showToast({
-        title: '请输入故障描述',
+        title: '请输入维保描述',
         icon:'error',
         duration:3000
       })
@@ -316,7 +330,7 @@ Page({
       
           
       wx.showModal({
-        title: '故障记录确认框',
+        title: '维保记录更新确认框',
         content: that.data.modalContent,
         success:function(res){    
           if (res.confirm) {
@@ -325,27 +339,29 @@ Page({
               method:'POST',
               header:{'content-type': 'application/x-www-form-urlencoded'},
               data:{
-                code:'errorInfoInsert',
+                code:'maintainInfoUpdate',
+                id:that.data.id,
                 line:that.data.line,
                 productionline:that.data.productionLine,
                 area:that.data.area,
-                cartype:that.data.cartypeArea[that.data.cartypeIndex],
+                cartype:that.data.cartype,
                 AFO:that.data.AFO,
                 maintainers:that.data.maintainers,
-                startTime:that.data.startTimestamp,
+                startTime:that.data.startTime,
                 startTime1:todaydate + ' ' + that.data.timeStart,
-                holdTime:that.data.holdTimestamp,
-                holdTime1:that.data.holdTime,
+                holdTime:that.data.holdTime,
+                holdTime1:that.data.holdTime1,
                 errorInfo:that.data.errorInfo,
-                endTime:that.data.endTimestamp,
+                endTime:that.data.endTime1,
                 endTime1:todaydate  + ' ' + that.data.endTime,
                 employeeName:App.userinfo.employeeName,
                 employeeId:App.userinfo.employeeId
               },
               success: function(res){
+                console.log(res)
                 if(res.data.status == true){
                   wx.showToast({
-                    title: '故障信息录入成功',
+                    title: '维保信息更新成功',
                     icon: 'none',
                     duration: 1000
                   })
@@ -355,8 +371,8 @@ Page({
                     productionLine: '请选择工段',
                     // areaArray: ['请选择班组'],
                     area: '请选择班组',
-                    cartypeArea:['请选择车型'],
-                    cartypeIndex:0,
+                    // cartypeArea:['请选择车型'],
+                    cartype:'请选择车型',
                     // AFOArray:['请选择工位'],
                     AFO:'请选择工位',
                     maintainers:'',
@@ -367,13 +383,13 @@ Page({
                     holdTimestamp:'',
                     errorInfo:'',
                     endTimestamp:'',
-                    modalContent:'确认此故障尚未结束？',
+                    modalContent:'确认此维保尚未结束？',
                     endBtnShow:false
                   })
                 }
                 else{
                   wx.showToast({
-                    title: '故障信息未录入成功，请重试',
+                    title: '维保信息更新失败，请重试',
                     icon: 'none',
                     duration: 1000
                   })
@@ -475,7 +491,33 @@ Page({
       });
     },
   onLoad(options) {
-    // console.log(options)
+    
+    console.log(JSON.parse(options.noendErrorInfo))
+    var timeNow = parseInt(new Date().getTime()/1000)
+    var holdSec = timeNow - JSON.parse(options.noendErrorInfo).startTime
+    var holdtime = parseInt(holdSec/3600) + '小时' + parseInt(holdSec%3600/60) + '分钟'
+    var startTimeIndex = JSON.parse(options.noendErrorInfo).startTime1.lastIndexOf(' ') + 1
+    console.log(startTimeIndex)
+    this.setData({
+      id:JSON.parse(options.noendErrorInfo).id,
+      line:JSON.parse(options.noendErrorInfo).line,
+      productionLine:JSON.parse(options.noendErrorInfo).productionline,
+      area:JSON.parse(options.noendErrorInfo).area,
+      AFO:JSON.parse(options.noendErrorInfo).AFO,
+      maintainers:JSON.parse(options.noendErrorInfo).maintainers,
+      timeStart:(JSON.parse(options.noendErrorInfo).startTime1).substring(startTimeIndex),
+      holdTime:holdtime,
+      errorInfo:JSON.parse(options.noendErrorInfo).errorInfo,
+      cartype:JSON.parse(options.noendErrorInfo).cartype,
+      startTime:JSON.parse(options.noendErrorInfo).startTime,
+      startTime1:JSON.parse(options.noendErrorInfo).startTime1,
+      holdTime1:holdSec,
+      endTime:JSON.parse(options.noendErrorInfo).endTime,
+      endTime1:JSON.parse(options.noendErrorInfo).endTime,
+      employeeName:App.userinfo.employeeName,
+      employeeId:App.userinfo.employeeId
+    })
+    this.cartypeArrayAssignment(JSON.parse(options.noendErrorInfo).line)
     let that = this
 
     wx.request({

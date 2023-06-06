@@ -1,6 +1,11 @@
 {
   "pages": [
     "pages/hoursOutputSection/hoursOutputSection",
+    "pages/maintenanceRecord/maintenanceRecord",
+    "pages/maintenanceShow/maintenanceShow",
+    "pages/maintainRecord/maintainRecord",
+    "pages/maintainShow/maintainShow",
+    "pages/maintainShowSection/maintainShowSection",
     "pages/ErrorShow/ErrorShow",
     "pages/ErrorShowSection/ErrorShowSection",
     "pages/register/register",
@@ -9,14 +14,10 @@
     "pages/hoursOutput/hoursOutput",
     "pages/output/output",
     "pages/errorRecord/errorRecord",
-
-
-
-
+    "pages/updateHoursOutput/updateHoursOutput",
+    "pages/updateMaintainceInfo/updateMaintainceInfo",
+    "pages/updateErrorInfo/updateErrorInfo",
     "pages/bigsectionStatus/bigsectionStatus",
-
-
-
     "pages/navi/navi",
     "pages/auth/auth",
     "pages/index/index",

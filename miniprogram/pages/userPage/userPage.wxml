@@ -16,12 +16,12 @@
 </view>
 </view>
 <view class="naviLine">
-  <view class="naviBox" bindtap="naviToAuth">
+  <view class="naviBox" bindtap="naviToOutput">
     <view class="naviImage">
-      <image src="../images/auth.png"></image>
+      <image src="../images/outputinsert.png"></image>
     </view>
     <view class="naviText">
-      员工授权
+      总产量输入
     </view>
   </view>
   <view class="naviBox" bindtap="naviToErrorRecord">
@@ -32,12 +32,13 @@
       故障输入
     </view>
   </view>
-  <view class="naviBox" bindtap="naviToOutput">
+  
+  <view class="naviBox" bindtap="naviToMaintenanceRecord">
     <view class="naviImage">
-      <image src="../images/outputinsert.png"></image>
+      <image src="../images/maintainceRecord.png"></image>
     </view>
     <view class="naviText">
-      总产量输入
+      维保输入
     </view>
   </view>
 </view>
@@ -56,6 +57,26 @@
     </view>
     <view class="naviText">
       故障查询
+    </view>
+  </view>
+  <view class="naviBox" bindtap="naviToMatainceShow">
+    <view class="naviImage">
+      <image src="../images/matainceShow.png"></image>
+    </view>
+    <view class="naviText">
+      维保查询
+    </view>
+  </view>
+</view>
+<view class="naviLine1">
+ 
+  
+  <view class="naviBox1" bindtap="naviToAuth">
+    <view class="naviImage">
+      <image src="../images/auth.png"></image>
+    </view>
+    <view class="naviText">
+      员工授权
     </view>
   </view>
 </view>

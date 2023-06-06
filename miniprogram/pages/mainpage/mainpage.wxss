@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 96.5%;
   border: 5rpx solid #87ceeb;
-  border-radius: 30rpx;
+  border-radius: 100rpx;
   height: 120rpx;
   font-size: 50rpx;
   margin: 10rpx;
@@ -18,11 +18,19 @@
   align-items: center;
   margin-left: 100rpx;
 }
+.grayDot{
+  background-color: gray;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
 .redDot{
   background-color: red;
   width: 50rpx;
   height: 50rpx;
   border-radius: 50rpx;
+  margin-left: 20rpx;
 }
 .yellowDot{
   background-color: yellow;
@@ -30,6 +38,7 @@
   height: 50rpx;
   border-radius: 50rpx;
   margin-left: 30rpx;
+  margin-left: 20rpx;
 }
 .greenDot{
   background-color: green;
@@ -37,6 +46,7 @@
   height: 50rpx;
   border-radius: 50rpx;
   margin-left: 30rpx;
+  margin-left: 20rpx;
 }
 .container{
   display: flex;
@@ -66,6 +76,13 @@
   border-radius: 30rpx;
   margin-right: 10rpx;
 }
+.gray{
+  background-color: gray;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  margin-right: 10rpx;
+}
 .title{
   margin-right: 20rpx;
 }
@@ -78,4 +95,58 @@
   /* justify-content: center; */
   align-items: center;
   /* margin-left: 100rpx; */
+  
+}
+.subline {
+  display: flex;
+  flex-wrap: wrap;
+  width: 99%;
+  margin: 10rpx;
+  font-size: 30rpx;
+}
+
+.subview {
+  width: 45%;
+  box-sizing: border-box;
+  padding: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 5rpx solid #87ceeb;
+  margin: 10rpx;
+  border-radius: 50rpx;
+}
+
+.left1 {
+  flex-grow: 1;
+  display: flex;
+  width: 50%;
+  /* line-height: 120rpx; */
+  /* text-align: center; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 100rpx; */
+}
+
+.right1 {
+  width: 40rpx;
+  display: flex;
+  /* justify-content: space-between; */
+  /* display: flex; */
+  width: 50%;
+  line-height: 120rpx;
+  /* text-align: center; */
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  margin-left: 30rpx;
+}
+.signal{
+  width: 35rpx;
+
+}
+.signal1{
+  width: 70rpx;
+
 }

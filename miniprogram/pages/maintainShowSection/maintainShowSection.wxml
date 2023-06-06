@@ -1,0 +1,35 @@
+<view class="container">
+  <form bindsubmit="submitForm">
+    <view class="form-item">
+      <text>条线</text>
+      <picker mode="selector" name="line" value="{{lineIndex}}" range="{{lineArray}}" bindchange="bindLineChange">
+        <view class="{{lineIndex == 0? 'picker' : 'picker1'}}">{{lineArray[lineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item" bindtap="checklineIndex">
+      <text>工段</text>
+      <picker mode="selector" name="productionLine" value="{{productionLineIndex}}" range="{{productionLineArray}}" bindchange="bindProductionLineChange">
+        <view class="{{productionLineIndex == 0? 'picker' : 'picker1'}}">{{productionLineArray[productionLineIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item" bindtap="checkLinePlineIndex">
+      <text>班组</text>
+      <picker mode="selector" name="area" value="{{areaIndex}}" range="{{areaArray}}" bindchange="bindAreaChange">
+        <view class="{{areaIndex == 0? 'picker' : 'picker1'}}">{{areaArray[areaIndex]}}</view>
+      </picker>
+    </view>
+     <view class="form-item" bindtap="checkLinePlineAreaIndex">
+      <text>工位</text>
+      <picker mode="selector" name="area" value="{{AFOIndex}}" range="{{AFOArray}}" bindchange="bindAFOChange">
+        <view class="{{AFOIndex == 0? 'picker' : 'picker1'}}">{{AFOArray[AFOIndex]}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text>日期</text>
+      <picker mode="date" value="{{date}}" start="2023-05-09" end="2030-09-01" bindchange="bindDateChange">
+        <view class="{{date == '请选择日期'? 'picker' : 'picker1'}}">{{date}}</view>
+      </picker>
+    </view>
+    <button bindtap = 'naviToErrorShow' class="submit-btn">故障查询</button>
+  </form>
+</view>

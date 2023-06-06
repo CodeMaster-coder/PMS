@@ -18,7 +18,7 @@ Page({
     holdTimestamp:'',
     errorInfo:'',
     endTimestamp:'',
-    modalContent:'确认此故障尚未结束？',
+    modalContent:'确认此维保尚未结束？',
     endBtnShow:false,
     customArray:[],
     customIndex: [0, 0, 0, 0],
@@ -250,7 +250,7 @@ Page({
       this.setData({
         endTime:e.detail.value,
         endTimestamp:endTimestamp,
-        modalContent:'确认此故障已结束？',
+        modalContent:'确认此维保已结束？',
         holdTime:holdtime,
         holdTimestamp:holdSec,
       })
@@ -259,7 +259,7 @@ Page({
       this.setData({
         endTime:e.detail.value,
         endTimestamp:endTimestamp,
-        modalContent:'确认此故障已结束？'
+        modalContent:'确认此维保已结束？'
       })
     }
     
@@ -269,18 +269,13 @@ Page({
     var current = new Date()
     var todaydate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate().toString()
     console.log(todaydate + ' ' + that.data.timeStart) 
-   
+   that.setData({
+     cartype:'all'
+   })
     if(that.data.line == '请选择条线'){
       wx.showToast({
         title: '请选择条线、工段、班组、工位',
         icon:'none',
-        duration:3000
-      })
-    }
-    else if(that.data.cartypeIndex == 0){
-      wx.showToast({
-        title: '请选择车型',
-        icon:'error',
         duration:3000
       })
     }
@@ -300,14 +295,14 @@ Page({
     }
     else if(that.data.errorInfo == ''){
       wx.showToast({
-        title: '请输入故障描述',
+        title: '请输入维保描述',
         icon:'error',
         duration:3000
       })
     }
     else if(that.data.errorInfo == ''){
       wx.showToast({
-        title: '请输入故障描述',
+        title: '请输入维保描述',
         icon:'error',
         duration:3000
       })
@@ -316,7 +311,7 @@ Page({
       
           
       wx.showModal({
-        title: '故障记录确认框',
+        title: '维保记录确认框',
         content: that.data.modalContent,
         success:function(res){    
           if (res.confirm) {
@@ -325,11 +320,11 @@ Page({
               method:'POST',
               header:{'content-type': 'application/x-www-form-urlencoded'},
               data:{
-                code:'errorInfoInsert',
+                code:'maintainInfoInsert',
                 line:that.data.line,
                 productionline:that.data.productionLine,
                 area:that.data.area,
-                cartype:that.data.cartypeArea[that.data.cartypeIndex],
+                cartype:that.data.cartype,
                 AFO:that.data.AFO,
                 maintainers:that.data.maintainers,
                 startTime:that.data.startTimestamp,
@@ -345,7 +340,7 @@ Page({
               success: function(res){
                 if(res.data.status == true){
                   wx.showToast({
-                    title: '故障信息录入成功',
+                    title: '维保信息录入成功',
                     icon: 'none',
                     duration: 1000
                   })
@@ -367,13 +362,13 @@ Page({
                     holdTimestamp:'',
                     errorInfo:'',
                     endTimestamp:'',
-                    modalContent:'确认此故障尚未结束？',
+                    modalContent:'确认此维保尚未结束？',
                     endBtnShow:false
                   })
                 }
                 else{
                   wx.showToast({
-                    title: '故障信息未录入成功，请重试',
+                    title: '维保信息未录入成功，请重试',
                     icon: 'none',
                     duration: 1000
                   })

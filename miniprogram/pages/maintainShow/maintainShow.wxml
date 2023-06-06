@@ -61,10 +61,10 @@ module.exports.holdtime = holdtime;
 <view class="container1">
   <view class="line1">
       <view class="{{closeTapShow?'left1':'left2'}}" bindtap="noendErrorSelect">
-        未结束故障
+        未结束维保
       </view>
       <view class="{{!closeTapShow?'left1':'left2'}}" bindtap="endErrorSelect">
-       已结束故障
+       已结束维保
       </view>
     </view>
 </view>
@@ -94,7 +94,7 @@ module.exports.holdtime = holdtime;
     <view class="errorContent">
       
       <view class="title">
-        故障信息
+        维保信息
       </view>
     </view>
   </view>
@@ -158,7 +158,7 @@ module.exports.holdtime = holdtime;
     <view class="errorContent">
       
       <view class="title">
-        故障信息
+        维保信息
       </view>
     </view>
   </view>

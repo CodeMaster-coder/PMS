@@ -123,7 +123,7 @@ Page({
         // console.log(i)
         output = output + pastTimeOutput[i].hoursOutput
       }
-      console.log(output)
+      // console.log(output)
       if(output >= pastTimeOutput.length*averageOutput){
         that.setData({
           outputStatusContent: '无欠产'
@@ -131,7 +131,7 @@ Page({
       }
       else{
         that.setData({
-          outputStatusContent: '无欠产'
+          outputStatusContent: '欠产'
         })
       }
     
@@ -276,7 +276,7 @@ wx.request({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res){
-        // console.log(res)
+        console.log(res)
         resolve(res)
         var obj1 = res.data;
         // let obj = JSON.parse(obj1);
@@ -286,6 +286,43 @@ wx.request({
       }
   })
   })},
+  touchStart(e) {
+    let that = this;
+    that.setData({
+      touchsx: e.changedTouches[0].clientX,
+      // touchsy: e.changedTouches[0].clientY
+    });
+  
+  },
+  touchEnd(e) {
+    console.log(e)
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    that.setData({
+      touchex: e.changedTouches[0].clientX,
+      // touchey: e.changedTouches[0].clientY
+    });
+    if(that.data.touchsx-that.data.touchex >= 50){
+      this.setData({
+        currentItem:index
+      })
+    }
+  
+  },
+  delBtnDisapear(){
+    this.setData({
+      currentItem:9999
+    })
+  },
+  updateHoursOutput(e){
+    let hoursOutput = this.data.pastTimeOutput[e.currentTarget.dataset.index]
+     wx.navigateTo({
+       url: '/pages/updateHoursOutput/updateHoursOutput?hoursOutputdata='
+       +JSON.stringify(hoursOutput)+ '&bigsection=' + this.data.region 
+       + '&planAverageOutput=' + this.data.planAverageOutput,
+     })
+     console.log(hoursOutput)
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -370,8 +407,10 @@ wx.request({
               startHour:res.data[0].endHour,
               endHour:parseInt(that.timeDeal(res.data[0].endHour)[1]),
               inputShow: true,
-              btnShow:true
+              btnShow:true,
             })
+            that.finishhousOutputStatus(res.data,that.data.planAverageOutput)
+            that.finishrealaverageOutput(res.data)
           }
         }
       })

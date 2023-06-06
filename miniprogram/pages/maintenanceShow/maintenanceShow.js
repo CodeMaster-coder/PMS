@@ -18,12 +18,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
-          line:that.data.line,
-          bigsection:that.data.bigsection,
-          smallsection:that.data.smallsection,
-          AFO:that.data.AFO,
-          date:that.data.date,
+          code:'maintainceInfoSelect',
           endtime:this.data.endtime
         },
         method:'POST',
@@ -52,12 +47,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
-          line:that.data.line,
-          bigsection:that.data.bigsection,
-          smallsection:that.data.smallsection,
-          AFO:that.data.AFO,
-          date:that.data.date,
+          code:'maintainceInfoSelect',
           endtime:this.data.endtime
         },
         method:'POST',
@@ -137,7 +127,7 @@ Page({
         method:'POST',
         header:{'content-type': 'application/x-www-form-urlencoded'},
         data:{
-          code:'deleteErrorInfo',
+          code:'deleteMaintainceInfo',
           id:e.currentTarget.dataset.id,
         },
         success: function(res){
@@ -146,9 +136,6 @@ Page({
               title: '故障信息删除成功',
               icon: 'none',
               duration: 1000
-            })
-            that.setData({
-              currentItem:''
             })
             const pages = getCurrentPages()
             const perpage = pages[pages.length - 1]
@@ -167,7 +154,7 @@ Page({
   updateNoendErrorInfo(e){
     let noendErrorInfo = this.data.errorInfo[e.currentTarget.dataset.index]
      wx.navigateTo({
-       url: '/pages/updateErrorInfo/updateErrorInfo?noendErrorInfo='
+       url: '/pages/updateMaintainceInfo/updateMaintainceInfo?noendErrorInfo='
        +JSON.stringify(noendErrorInfo)
      })
      console.log(noendErrorInfo)
@@ -176,25 +163,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-  if(options != undefined){
     let that = this
     this.setData({
-      line:options.line,
-      bigsection:options.bigsection,
-      smallsection:options.smallsection,
-      AFO:options.AFO,
-      date:options.date,
       timeNow:parseInt(new Date().getTime()/1000)
     })
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
-          line:options.line,
-          bigsection:options.bigsection,
-          smallsection:options.smallsection,
-          AFO:options.AFO,
-          date:options.date,
+          code:'maintainceInfoSelect',
           endtime:this.data.endtime
         },
         method:'POST',
@@ -213,39 +189,7 @@ Page({
          
         }
     })
-  }else{
-    let that = this
-    this.setData({
-      timeNow:parseInt(new Date().getTime()/1000)
-    })
-    wx.request({
-      url: 'https://www.liuke.xyz/PMS/login',
-        data:{
-          code:'errorShowSelect',
-          line:that.data.line,
-          bigsection:that.data.bigsection,
-          smallsection:that.data.smallsection,
-          AFO:that.data.AFO,
-          date:that.data.date,
-          endtime:this.data.endtime
-        },
-        method:'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
-        success(res){
-          console.log(res)
   
-          // var obj1 = res.data;
-          // let obj = JSON.parse(obj1);
-          // console.log(obj1)
-          that.setData({
-            errorInfo:res.data
-          })
-         
-        }
-    })
-  }
 
   },
 
@@ -264,12 +208,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
-          line:this.data.line,
-          bigsection:this.data.bigsection,
-          smallsection:this.data.smallsection,
-          AFO:this.data.AFO,
-          date:this.data.date,
+          code:'maintainceInfoSelect',
           endtime:this.data.endtime
         },
         method:'POST',

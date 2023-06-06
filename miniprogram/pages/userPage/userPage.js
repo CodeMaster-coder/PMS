@@ -69,8 +69,26 @@ Page({
       url: '/pages/ErrorShowSection/ErrorShowSection',
     })
   },
-  
-  /**
+  naviToMaintenanceRecord(){
+    if(App.userinfo.wokertype == '维修'){
+      wx.navigateTo({
+        url: '/pages/maintainRecord/maintainRecord',
+      })
+    }
+    else{
+      wx.showToast({
+        title: '您无权限！！！',
+        icon:'error',
+        duration:3000
+      })
+    }
+  },
+  naviToMatainceShow(){
+      wx.navigateTo({
+        url: '/pages/maintainShowSection/maintainShowSection',
+      })
+  },
+ /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {

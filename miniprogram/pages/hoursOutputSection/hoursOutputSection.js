@@ -28,24 +28,24 @@ Page({
   },
   
   maintainersInput(e){
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
     this.setData({
       maintainers:e.detail.value
     })
   },
   bindLineChange: function (e) {
     let that = this
-    console.log('picker line 发生选择改变，携带值为', e.detail.value);
+    // console.log('picker line 发生选择改变，携带值为', e.detail.value);
     this.setData({
       lineIndex: e.detail.value
     })
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
     if(e.detail.value != 0){
       if(this.data.lineArray[this.data.lineIndex].substring(0,3) == '2.1'){
         this.setData({
           cartypeArea:['请选择车型','Teramont','TeramontX','Viloran',]
         });
-        console.log(this.data.cartypeArea)
+        // console.log(this.data.cartypeArea)
       }
       else{
         this.setData({
@@ -63,7 +63,7 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success: function(res) {
-          console.log(JSON.parse(res.data))
+          // console.log(JSON.parse(res.data))
          if(res.data.length > 0){
            let list1 = JSON.parse(res.data)
            list1.unshift('请选择工段')
@@ -401,7 +401,9 @@ Page({
   naviToHoursOutput(){
     if(this.data.productionLineIndex != 0){
       wx.navigateTo({
-        url: '/pages/hoursOutput/hoursOutput?bigsection='+this.data.productionLineArray[this.data.productionLineIndex],
+        url: '/pages/hoursOutput/hoursOutput?bigsection='
+        +this.data.productionLineArray[this.data.productionLineIndex] 
+        
       })
     }
     else{

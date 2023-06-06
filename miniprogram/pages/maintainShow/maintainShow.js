@@ -18,7 +18,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
+          code:'maintainShowSelect',
           line:that.data.line,
           bigsection:that.data.bigsection,
           smallsection:that.data.smallsection,
@@ -52,7 +52,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
+          code:'maintainShowSelect',
           line:that.data.line,
           bigsection:that.data.bigsection,
           smallsection:that.data.smallsection,
@@ -137,13 +137,13 @@ Page({
         method:'POST',
         header:{'content-type': 'application/x-www-form-urlencoded'},
         data:{
-          code:'deleteErrorInfo',
+          code:'deleteMaintainInfo',
           id:e.currentTarget.dataset.id,
         },
         success: function(res){
           if(res.data.status == true){
             wx.showToast({
-              title: '故障信息删除成功',
+              title: '维保信息删除成功',
               icon: 'none',
               duration: 1000
             })
@@ -156,7 +156,7 @@ Page({
           }
           else{
             wx.showToast({
-              title: '故障信息删除失败',
+              title: '维保信息删除失败',
               icon: 'none',
               duration: 1000
             })
@@ -167,7 +167,7 @@ Page({
   updateNoendErrorInfo(e){
     let noendErrorInfo = this.data.errorInfo[e.currentTarget.dataset.index]
      wx.navigateTo({
-       url: '/pages/updateErrorInfo/updateErrorInfo?noendErrorInfo='
+       url: '/pages/updateMaintainceInfo/updateMaintainceInfo?noendErrorInfo='
        +JSON.stringify(noendErrorInfo)
      })
      console.log(noendErrorInfo)
@@ -189,7 +189,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
+          code:'maintainShowSelect',
           line:options.line,
           bigsection:options.bigsection,
           smallsection:options.smallsection,
@@ -221,7 +221,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
+          code:'maintainShowSelect',
           line:that.data.line,
           bigsection:that.data.bigsection,
           smallsection:that.data.smallsection,
@@ -264,7 +264,7 @@ Page({
     wx.request({
       url: 'https://www.liuke.xyz/PMS/login',
         data:{
-          code:'errorShowSelect',
+          code:'maintainShowSelect',
           line:this.data.line,
           bigsection:this.data.bigsection,
           smallsection:this.data.smallsection,

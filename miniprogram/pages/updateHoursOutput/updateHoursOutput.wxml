@@ -1,5 +1,4 @@
-<view bindtap='delBtnDisapear' class="bigBox">
-  <view class="container" >
+<view class="container" >
   <!-- <view class="left">
     <view class="row">
       <text class="label">日期：</text>
@@ -27,48 +26,17 @@
       <text class="label">计划平均产量</text>
       <text class="value">{{planAverageOutput}}</text>
     </view>
-    <view class="row">
+    <!-- <view class="row">
       <text class="label">实际平均产量</text>
       <text class="value">{{actualAverageOutput}}</text>
-    </view>
-    <view class="row">
+    </view> -->
+    <!-- <view class="row">
       <text class="label">产量状态</text>
       <text class="value">{{outputStatusContent}}</text>
-    </view>
+    </view> -->
   </view>
 </view>
-
-<view class="containerline" wx:for="{{pastTimeOutput}}" wx:key="index" >
-<view class="container1"  bindtouchstart='touchStart' bindtouchend="touchEnd" data-index="{{index}}">
-  <view class="leftside">
-    <text class="title">时间</text>
-      <text class="content">{{item.timePeriod}}</text>
-  </view>
-  <view class="leftside">
-    <text class="title">产量</text>
-    <view class="content">
-      {{item.hoursOutput}}
-    </view>  
-  </view>
-  <view class="leftside">
-    <text class="title">状态</text>
-    <view class="content" wx:if="{{item.hoursOutput > planAverageOutput}}">
-      无欠产
-    </view>  
-    <view class="content" wx:if="{{!(item.hoursOutput > planAverageOutput)}}">
-      欠产
-    </view>  
-  </view>
- 
-</view>
- 
-  <view class="{{currentItem === index? 'delBtn' : 'delBtn1'}}" data-index="{{index}}"  data-id="{{item.id}}" bindtap="updateHoursOutput">
-  更新
-  </view>
-</view>
-
-
-<view class="container1" wx:if="{{inputShow}}">
+<view class="container1" >
   <view class="leftside">
     <text class="title">时间</text>
       <text class="content">{{timePeriod}}</text>
@@ -76,7 +44,7 @@
   <view class="leftside">
     <text class="title">产量</text>
     <view class="content">
-      <input class="input"  disabled = '{{noinput}}' placeholder="请输入产量" value='{{hoursOutput}}' 	bindblur='OutputStatus' bindinput="hoursOutput"></input>
+      <input class="input" disabled="{{noinput}}" placeholder="请输入产量" value='{{hoursOutput}}' 	bindblur="updateValue" ></input>
     </view>
       
   </view>
@@ -94,13 +62,10 @@
   </view>
 </view>
 <view class="btnline">
-  <view class="insertBtn" bindtap="insertHoursOutput" wx:if="{{btnShow}}">
+  <view class="insertBtn" bindtap="updateHoursOutput" >
     <!-- <view class="btn"> -->
       提交
     <!-- </view> -->
     
   </view> 
 </view>
-</view>
-
-
